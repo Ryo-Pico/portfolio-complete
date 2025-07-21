@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORKS | RYOSUKE.K</title>
+    <link rel="stylesheet" href="assets/css/works-style.css">
+</head>
+
+<body id="top">
+    <header>
+        <h1 class="logo">RYOSUKE.K</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="works-title">
+            <img src="assets/images/WORKS2.png" alt="WORKSタイトル">
+        </section>
+
+        <section class="category">
+            <h2>Photoshop</h2>
+            <div class="grid">
+                <a href="https://ryo-pico.github.io/Portfolio/%E5%BA%83%E5%91%8A%E3%83%90%E3%83%8A%E3%83%BC.png">
+                    <img src="assets/images/koukoku.png" alt="アウトドアイベントバナー">
+                </a>
+                <a href="https://ryo-pico.github.io/Portfolio/%E6%BC%94%E7%BF%92.png">
+                <img src="assets/images/演習s.png" alt="演習s">
+                </a>
+                <a href="https://ryo-pico.github.io/Portfolio/%E3%82%B1%E3%83%BC%E3%82%AD.jpg">
+                <img src="assets/images/cake.png" alt="スイーツバナー">
+                </a>
+                <a href="https://ryo-pico.github.io/Portfolio/thumbnail.png">
+                <img src="assets/images/サムネ.png" alt="講座サムネイル">
+                </a>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>HTML/CSS</h2>
+            <div class="grid">
+              <a href="https://ryo-pico.github.io/Portfolio/kadai_tutorial_output/">
+                <img src="assets/images/html1.png" alt="HTML作品1">
+              </a>
+              <a href="https://ryo-pico.github.io/Portfolio/html-css-practical-sample-2024ver/">
+                <img src="assets/images/html2.png" alt="HTML作品2">
+              </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© RYOSUKE.K</p>
+        <a href="#top" class="top-button">
+            <img src="assets/images/TOP.png" alt="TOPへ戻る">
+        </a>
+    </footer>
+
+    <script>
+        // ザッピング演出付きTOPスクロール
+        document.querySelector('.top-button').addEventListener('click', function (e) {
+            e.preventDefault();
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100vw';
+            canvas.style.height = '100vh';
+            canvas.style.zIndex = '9999';
+            canvas.style.pointerEvents = 'none';
+            canvas.id = 'zap-effect';
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            canvas.width = w;
+            canvas.height = h;
+            let frame = 0;
+            const drawNoise = () => {
+                const imageData = ctx.createImageData(w, h);
+                const buffer32 = new Uint32Array(imageData.data.buffer);
+                for (let i = 0; i < buffer32.length; i++) {
+                    if (Math.random() < 0.5) buffer32[i] = 0xffffffff;
+                }
+                ctx.putImageData(imageData, 0, 0);
+            };
+            const interval = setInterval(() => {
+                drawNoise();
+                frame++;
+                if (frame > 10) {
+                    clearInterval(interval);
+                    canvas.remove();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }, 30);
+        });
+    </script>
+</body>
+
+</html>

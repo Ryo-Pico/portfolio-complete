@@ -1,0 +1,89 @@
+/* Adobe Fontsから読み込み */
+@import url('https://use.typekit.net/your-kit-id.css');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #1b2222;
+  color: white;
+  font-family: "sans-serif" , "vdl-v7mincho";
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background: black;
+}
+.logo {
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.works-title {
+  text-align: center;
+  margin: 2em 0;
+}
+.works-title img {
+  max-width: 80%;
+  height: auto;
+}
+.category {
+  padding: 2em 1em;
+  text-align: center;
+}
+.category h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+  padding: 0 2em;
+}
+.grid img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.grid img:hover {
+  transform: scale(1.05);
+}
+footer {
+  background: #000;
+  padding: 2em 1em;
+  text-align: center;
+  position: relative;
+}
+footer p {
+  margin-bottom: 0.5em;
+}
+.top-button {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+.top-button img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+.top-button img:hover {
+  transform: scale(1.2);
+}
+p{
+    margin-top: 5em;
+}
