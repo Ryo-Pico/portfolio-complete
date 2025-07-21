@@ -85,6 +85,10 @@ nav a {
   margin-bottom: 0.5em;
 }
 
+.contact-section a{
+  color: aliceblue;
+}
+
 .audio-section {
   position: relative;
   width: 100%;
