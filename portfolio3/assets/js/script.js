@@ -1,4 +1,4 @@
-document.querySelector('.top-button').addEventListener('click', function(e) {
+document.querySelector('.top-button').addEventListener('click', function (e) {
   e.preventDefault();
 
   // 1. Canvasでザッピングノイズを描画
